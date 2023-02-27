@@ -20,7 +20,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val scaffoldState = rememberScaffoldState()
-            var textFieldState by remember { mutableStateOf("") }
+            //important rememberSaveable() is important for rotation
+            var textFieldState by rememberSaveable { mutableStateOf("") }
             val scope= rememberCoroutineScope()
 
             Scaffold(
